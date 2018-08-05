@@ -1,0 +1,114 @@
+
+
+content {
+    font-family: Montserrat, sans-serif;
+    /* line-height: 1.8; */
+    color: white;
+}
+
+.elementNav {
+    background-color: rgba(0, 0, 0, 0.38);
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration-line: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+  }
+  
+  .elementNav:hover {
+    background-color: rgba(70, 70, 50, 0.38);
+    color: rgb(250, 246, 33);
+    box-shadow: 0 0 30px 4px black;
+  }
+  
+  .nav-tabs li a {
+    background-color: rgba(90, 90, 90, 0.38);
+    color: rgb(255, 255, 255);
+    
+  }
+
+  .nav-tabs li.active a {
+    background-color: rgba(90, 90, 90, 0.38);
+    color: rgb(250, 246, 33);
+    
+  }
+
+.tab-content .tab-pane {
+    padding: 15px;
+}
+
+#home a:hover {
+    color: rgb(250, 246, 33);
+}
+
+#yo {
+    height: inherit;
+    align-self: center;
+}
+
+.logo-list {
+    display: block;
+    /* display: flex; */
+    float: top;
+}
+
+.logo-list div {
+    display: inline-block;
+    height: 40px;
+    margin: 10px;
+    /* -webkit-animation: logos 500ms linear 1 both; */
+    /* animation: logos 500ms linear 1 both; */
+    -webkit-animation: logos 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: logos 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    /* animation-delay: 3.9s; */
+}
+
+.logo-list div:nth-child(1) { animation-delay: 0.3s;}
+.logo-list div:nth-child(2) { animation-delay: 0.6s;}
+.logo-list div:nth-child(3) { animation-delay: 0.9s;}
+.logo-list div:nth-child(4) { animation-delay: 1.2s;}
+.logo-list div:nth-child(5) { animation-delay: 1.5s;}
+.logo-list div:nth-child(6) { animation-delay: 1.8s;}
+.logo-list div:nth-child(7) { animation-delay: 2.1s;}
+.logo-list div:nth-child(8) { animation-delay: 2.4s;}
+.logo-list div:nth-child(9) { animation-delay: 2.7s;}
+.logo-list div:nth-child(10) { animation-delay: 3.0s;}
+.logo-list div:nth-child(11) { animation-delay: 3.3s;}
+.logo-list div:nth-child(12) { animation-delay: 3.6s;}
+.logo-list div:nth-child(13) { animation-delay: 3.9s;}
+
+.logo-list div img {
+    height: 40px;
+}
+
+@-webkit-keyframes logos {
+    0% {
+      -webkit-transform: translateX(-500vh);
+              transform: translateX(-500vh);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+@keyframes logos {
+    0% {
+        -webkit-transform: translateX(-500vh);
+        transform: translateX(-500vh);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+#yo {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/assets/imagenes/utn.png");
+    /* background-size: contain; */
+    /* background-size: cover; */
+}

@@ -1,0 +1,12 @@
+
+.panel {
+    background-color: rgba(40, 40, 40, 0.38);
+    padding: 15px;
+    margin: auto;
+    width: fit-content;
+}
+
+.wrapper {
+    max-width: 100%;
+    text-align: center;
+}

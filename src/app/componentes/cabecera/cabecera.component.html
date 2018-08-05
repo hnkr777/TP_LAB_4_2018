@@ -1,0 +1,71 @@
+<div class="img-bg">
+  <div class="autor">2018&nbsp;-&nbsp;Design&nbsp;by&nbsp;hnkr777</div>
+</div>
+
+<div class="panel panel-default hironakamura">
+  <div class="hero-text">
+    <div class="container-fluid">
+      <div class="row header-hero">
+        <div class="col-md-12">
+          <h1 class="main-title t-tag">Remisería Humberto</h1>
+        </div>
+        <!-- <p class="titulo">Hnkr</p> -->
+      </div>
+
+      <div class="navs">
+
+        <a href="https://github.com/hnkr777/TP_LAB_4_2018.git" target="_blank" title="Github del proyecto">
+          <div class="elementNav titulo">
+            <div class="">
+              <span class="fa fa-github inline"></span>&nbsp; En GitHub
+            </div>
+          </div>
+        </a>
+
+        <a data-toggle="modal" data-target="#modalAlta" title="Alta">
+          <div class="elementNav titulo">
+            <div class="">
+              <!-- routerLink="/QuienSoy" -->
+              <span class="glyphicon glyphicon-plus inline"></span>&nbsp; Alta
+            </div>
+          </div>
+        </a>
+
+        <a data-toggle="modal" data-target="#modalAbout" title="Acerca del autor...">
+          <div class="elementNav titulo">
+            <div class="">
+              <!-- routerLink="/QuienSoy" -->
+              <span class="glyphicon glyphicon-asterisk inline"></span>&nbsp; Acerca
+            </div>
+          </div>
+        </a>
+
+        <a *ngIf="loged" (click)="logout()" routerLink="/">
+          <div class="elementNav titulo">
+            <div class="">
+              <span class="glyphicon glyphicon-log-out inline"></span>&nbsp; Salir
+            </div>
+          </div>
+        </a>
+
+        <a *ngIf="!loged" routerLink="/Login">
+          <div class="elementNav titulo">
+            <div class="">
+              <span class="glyphicon glyphicon-log-in inline"></span>&nbsp; Ingresar
+            </div>
+          </div>
+        </a>
+
+        <a *ngIf="!loged" routerLink="/Registro">
+          <div class="elementNav titulo">
+            <div class="">
+              <span class="glyphicon glyphicon-user inline"></span>&nbsp; Registrarse
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</div>
