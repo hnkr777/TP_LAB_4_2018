@@ -1,0 +1,21 @@
+
+
+<!-- Modal mensajes de error, info, aviso -->
+<div id="modalMsg" class="modal fade modalFadeback titulo"  tabindex="-1" role="dialog fade" aria-labelledby="infoAbout" aria-hidden="true">
+    <div id="modalMsgMain" class="modal-dialog modal-lg" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header" [ngClass]="tipo">
+                <h5 class="modal-title">{{titulo}}</h5>
+                <button type="button" class="close" title="Cerrar" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{mensaje}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="elementNav" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

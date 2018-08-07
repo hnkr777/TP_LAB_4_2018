@@ -1,0 +1,42 @@
+<div class="container wrapper">
+  <div class="titulo">
+    <h1>{{nuevoJuego.titulo}}</h1>
+  </div>
+  <div class="panel">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="">
+          <img id="rotacion" class="rotacion">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="shadow titulo">
+            <h2 id="mensaje" class="mensaje">{{mensaje}}</h2>
+          </div>
+        </div>
+      </div>
+
+    <div class="row contenedor-botones">
+      <div class="col-sm-4">
+        <div (click)="elijoPiedra()" class="boton Piedra">
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div (click)="elijoPapel()" class="boton Papel">
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div (click)="elijoTijera()" class="boton Tijera">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <app-decorations></app-decorations>
+</div>

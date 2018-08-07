@@ -1,0 +1,48 @@
+<div class="content panel wrapper">
+  <div align="center" class="titulo">
+    <h3>Anagrama</h3>
+
+    <br>
+  </div>
+  <div align="center" class="titulo">
+    <h4>
+      <p>Escribe las letras en el orden correcto para formar el nombre de ciudad.</p>
+      <p>Tienes tres intentos como máximo, ¡buena suerte!</p>
+    </h4>
+  </div>
+  <br>
+  <br>
+
+  <div class="container contenedor" align="center">
+
+    <h4 class="titulo">Palabra anagrama: </h4>
+    <h1 class="titulo">[{{miJuego.palabra}}]</h1>
+
+    <form (submit)="comprobar()">
+      <div class="row">
+        <div class="col-md-12">
+          <input type="text" [(ngModel)]="palabra" name="palabraDelUsuario">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <input type="submit" name="Verificar" class="btn btn-success boton comprobar" value="Comprobar">
+        </div>
+        <div class="col-md-6">
+          <input type="button" name="Rendicion" class="btn btn-danger boton rendirse" (click)="rendirse()" value="Rendirse">
+        </div>
+      </div>
+    </form>
+
+    <div class="contador">
+      <h3 class="titulo">Reintentos: {{miJuego.contador}}</h3>
+    </div>
+    <div class="gano titulo">
+      <h3>{{miJuego.resultado}}</h3>
+    </div>
+  </div>
+
+
+  <app-decorations></app-decorations>
+</div>

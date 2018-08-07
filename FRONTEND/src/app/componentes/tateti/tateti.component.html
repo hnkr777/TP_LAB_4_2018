@@ -1,0 +1,65 @@
+<div class="container wrapper">
+  <div class="titulo">
+    <h1>{{nuevoJuego.titulo}}</h1>
+  </div>
+  <div class="panel">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="">
+          <!-- <img id="rotacion" class="rotacion"> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="shadow titulo">
+          <h2 id="mensaje" class="mensaje">{{mensaje}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="cont-padre">
+      <div class="contenedor-botones">
+        <div class="cont-interno">
+          <div (click)="elijo(1)" class="boton"></div>
+          <div (click)="elijo(2)" class="boton"></div>
+          <div (click)="elijo(3)" class="boton"></div>
+        </div>
+        <div class="cont-interno">
+          <div (click)="elijo(4)" class="boton"></div>
+          <div (click)="elijo(5)" class="boton"></div>
+          <div (click)="elijo(6)" class="boton"></div>
+        </div>
+        <div class="cont-interno">
+          <div (click)="elijo(7)" class="boton"></div>
+          <div (click)="elijo(8)" class="boton"></div>
+          <div (click)="elijo(9)" class="boton"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <app-decorations></app-decorations>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Reglas del juego:</h4>
+        <button type="button" class="close" data-dismiss="modal" title="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Tateti</p>
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

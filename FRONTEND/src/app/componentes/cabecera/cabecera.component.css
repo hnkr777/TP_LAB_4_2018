@@ -1,0 +1,186 @@
+
+.panel {
+    height: 160px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-color: transparent;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    position: relative;
+}
+
+.t-tag {
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  color: white;
+}
+
+.img-bg {
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0), stop(10%)));
+  background-image: url('/assets/imagenes/header2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  border: none;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 160px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(189, 160, 248);
+    /*font-size: 24px;*/
+}
+
+/*.hero-text a {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero-text a:hover {
+  background-color: #555;
+  color: white;
+}*/
+
+.main-title {
+    padding: 10px 40px;
+    border: 10px double #f9f1e9;
+    text-transform: uppercase;
+    font-family: Londrina Outline, sans-serif;
+}
+
+div.hironakamura {
+  /* font-weight:bold; */
+  /* color:#4794D3; */
+  
+  -webkit-animation: bounce-in 1s ease 0s 1 normal;
+  animation: bounce-in 1s ease 0s 1 normal;
+}
+   
+   @-webkit-keyframes bounce-in {
+     0%{
+       opacity: 0;
+       -webkit-transform: scale(.3);
+       transform: scale(.3);
+     }
+     50%{
+       opacity: 1;
+       -webkit-transform: scale(1.0);
+       transform: scale(1.0);
+     }
+     70%{
+       -webkit-transform: scale(0.9);
+       transform: scale(0.9);
+     }
+     100%{
+       -webkit-transform: scale(1);
+       transform: scale(1);
+     }
+   }
+   
+   @keyframes bounce-in {
+     0%{
+       opacity: 0;
+       transform: scale(.3);
+     }
+     50%{
+       opacity: 1;
+       transform: scale(1.0);
+     }
+     70%{
+       transform: scale(0.9);
+     }
+     100%{
+       transform: scale(1);
+     }
+  }
+
+.elementNav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  
+}
+
+.elementNav:hover a {
+  text-decoration: none;
+  color: rgb(250, 246, 33);
+}
+
+.header-hero {
+  /* width: 70vh; */
+  align-self: center;
+}
+
+.hero-text {
+  margin: 10px;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  /* min-width: 500px; */
+}
+
+.navs {
+  /* width: 80vmin; */
+  display: block;
+  background: solid;
+  /* max-inline-size: 80vh; */
+  /* align-content: space-around; */
+  /* align-items: center; */
+}
+
+.autor {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: xx-small;
+  position: relative;
+  display: block;
+  color: rgb(0, 0, 0);
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px black, 1px 0 black, 0 -1px rgb(255, 255, 255);
+  animation-delay: 1s;
+  animation: autor 10s ease 0s infinite normal;
+}
+
+@keyframes autor {
+  0% {
+    left: 0%;
+  }
+  99% {
+    left: 99%;
+  }
+  100% {
+    position: absolute;
+    text-align: right;
+  }
+}
+
+@-webkit-keyframes autor {
+  0% {
+    position: relative;
+    left: 0vh;
+  }
+  90% {
+    left: 80vh;
+    
+  }
+  91% {
+    position: absolute;
+    text-align: right;
+  }
+  100% {
+    text-align: right;
+  }
+}

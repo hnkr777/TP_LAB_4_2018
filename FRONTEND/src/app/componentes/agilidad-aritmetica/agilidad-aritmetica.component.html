@@ -1,0 +1,45 @@
+<div class="container wrapper titulo">
+  <div class="panel">
+    <form name="juego">
+      <div class="row">
+        <div class="col-sm-12">
+          Calcule el resultado de:
+          <!-- <input placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/> -->
+          <h1>
+            <label>{{resolver}}</label>
+          </h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          Respuesta:
+          <input placeholder="ingrese numero" [(ngModel)]="numeroIngresado" type="number" name="numeroIngresado" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 [hidden]="ocultarVerificar">
+            <button (click)="verificar()" class="btn btn-success btn-lg" style="padding: 15px; margin: 15px;">Verificar {{Tiempo}} </button>
+          </h2>
+
+
+          <h2 [hidden]="!ocultarVerificar">
+            <button (click)="NuevoJuego()" style="padding: 15px; margin: 15px;" class="btn btn-info btn-lg">Nuevo</button>
+          </h2>
+
+
+          <h2>
+            <p>
+              <i class="fa fa-spinner fa-spin"></i>{{mensaje}}</p>
+          </h2>
+
+          <h3 [hidden]="!nuevoJuego.ganador">Usted adivino el número</h3>
+          <h3 [hidden]="nuevoJuego.ganador">Usted aún no gano </h3>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <app-decorations></app-decorations>
+</div>
