@@ -162,3 +162,6 @@ input.checkbox:checked:after {
     }
   }
   
+  .captcha-class {
+      align-self: center;
+  }

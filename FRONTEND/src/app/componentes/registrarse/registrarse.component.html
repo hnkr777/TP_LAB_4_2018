@@ -27,10 +27,10 @@
           </div>
           <div class="clear"> </div>
         </div> -->
-        <!-- <re-captcha (captchaExpired)="captchaExpirado()" (captchaResponse)="handleCorrectCaptcha($event)" type="image" theme="dark"
-          language="es-419" site_key="6LeFo1wUAAAAAFlMXtUmVPSZ0-Cbp1gMx8tSMN_T"></re-captcha> -->
+        <re-captcha (captchaExpired)="captchaExpirado()" (captchaResponse)="handleCorrectCaptcha($event)" type="image" theme="dark"
+          language="es-419" site_key="6LeFo1wUAAAAAFlMXtUmVPSZ0-Cbp1gMx8tSMN_T"></re-captcha>
         
-        <div class="g-recaptcha" data-sitekey="6LeFo1wUAAAAAFlMXtUmVPSZ0-Cbp1gMx8tSMN_T"></div>
+        <!-- <div class="g-recaptcha captcha-class" (captchaExpired)="captchaExpirado()" (captchaResponse)="handleCorrectCaptcha($event)" data-sitekey="6LeFo1wUAAAAAFlMXtUmVPSZ0-Cbp1gMx8tSMN_T" theme="dark"></div> -->
 
         <button *ngIf="terminos " class="btn btn-default" type="submit">Registrarse</button>
 

@@ -13,7 +13,7 @@ import { HttpModule } from '@angular/http';
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
-//import { ReCaptchaModule } from 'angular2-recaptcha';
+import { ReCaptchaModule } from 'angular2-recaptcha';
 
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
 import { PaisesService } from './servicios/paises.service'; 
@@ -58,8 +58,6 @@ import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 import { BlackJackComponent } from './componentes/black-jack/black-jack.component';
-import { PiedraPapelTijeraComponent } from './componentes/ppt/piedra-papel-tijera.component';
-import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { DecorationsComponent } from './decorations/decorations.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
@@ -79,7 +77,6 @@ import { MsgComponent } from './componentes/msg/msg.component';
     AgilidadAritmeticaComponent,
     MenuComponent,
     BlackJackComponent,
-    PiedraPapelTijeraComponent,
     AdivinaMasListadoComponent,
     AgilidadMasListadoComponent,
     ListadoComponent,
@@ -94,7 +91,6 @@ import { MsgComponent } from './componentes/msg/msg.component';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    TatetiComponent,
     AnagramaComponent,
     DecorationsComponent,
     RegistrarseComponent,
@@ -111,7 +107,7 @@ import { MsgComponent } from './componentes/msg/msg.component';
     FormsModule,
     RuteandoModule,
     HttpModule,
-    //ReCaptchaModule,
+    ReCaptchaModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

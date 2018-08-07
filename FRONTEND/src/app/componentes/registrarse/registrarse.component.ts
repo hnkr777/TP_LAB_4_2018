@@ -5,7 +5,7 @@ import { MiHttpService } from "../../servicios/mi-http/mi-http.service";
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 import { environment } from '../../../environments/environment';
-//import { ReCaptchaModule, ReCaptchaComponent } from 'angular2-recaptcha';
+import { ReCaptchaModule, ReCaptchaComponent } from 'angular2-recaptcha';
 
 @Component({
   selector: 'app-registrarse',
@@ -13,7 +13,7 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit {
-  //@ViewChild(ReCaptchaComponent) captcha: ReCaptchaComponent;
+  @ViewChild(ReCaptchaComponent) captcha: ReCaptchaComponent;
   private subscription: Subscription;
   nombre: string = '';
   email: string = '';
