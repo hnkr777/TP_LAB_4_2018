@@ -1,5 +1,0 @@
-﻿id,email,password,turno,sexo,perfil,suspendido
-1,Vladimir001@estacionamiento.com,25021544,mañana,Masculino,encargado,0
-2,Jorge001@estacionamiento.com,45678921,tarde,Masculino,cliente,0
-3,Dulce001@estacionamiento.com,42512354,noche,Femenino,cliente,0
-4,suspendido001@estacionamiento.com,suspendido001@estacionamiento.com,mañana,Masculino,cliente,1
