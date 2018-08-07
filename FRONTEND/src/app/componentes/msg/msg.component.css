@@ -1,0 +1,16 @@
+
+
+.modalFadeback {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: rgba(70, 70, 70, 0.95);
+    color: white;
+    border-radius: 25px;
+}
+
+.Error {
+    background-color: rgba(143, 14, 14, 0.692);
+    border-radius: 25px 25px 0 0;
+}
