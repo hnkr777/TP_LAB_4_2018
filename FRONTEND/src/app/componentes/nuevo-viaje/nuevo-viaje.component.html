@@ -1,0 +1,12 @@
+<div *ngIf="logedOn=='cliente'">
+  <h1 class="titulo">
+    Bienvenido {{jwtObj.data.email}}
+  </h1>
+</div>
+
+<div *ngIf="logedOn!='cliente'">
+  <h1 class="titulo">
+    ¡Error de acceso!
+  </h1>
+  <h2 class="titulo">Usuario {{jwtObj.data.email}}</h2>
+</div>

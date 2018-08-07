@@ -65,6 +65,9 @@ import { TipoJuegoPipe } from './pipes/tipo-juego.pipe';
 import { AltaRemiseroComponent } from './componentes/alta-remisero/alta-remisero.component';
 import { AltaEncargadoComponent } from './componentes/alta-encargado/alta-encargado.component';
 import { MsgComponent } from './componentes/msg/msg.component';
+import { JwtTokenService } from './servicios/jwt-token.service';
+import { NuevoViajeComponent } from './componentes/nuevo-viaje/nuevo-viaje.component';
+import { VisorViajesComponent } from './componentes/visor-viajes/visor-viajes.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +100,9 @@ import { MsgComponent } from './componentes/msg/msg.component';
     TipoJuegoPipe,
     AltaRemiseroComponent,
     AltaEncargadoComponent,
-    MsgComponent
+    MsgComponent,
+    NuevoViajeComponent,
+    VisorViajesComponent
   ],
   entryComponents: [
     //Directive
@@ -115,7 +120,15 @@ import { MsgComponent } from './componentes/msg/msg.component';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService, ArchivosJuegosServiceService, PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ 
+    JuegoServiceService, 
+    MiHttpService, 
+    ArchivosJuegosServiceService, 
+    PaisesService,
+    ArchivosJugadoresService,
+    JugadoresService,
+    JwtTokenService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,6 +24,7 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 import { BlackJackComponent } from '../componentes/black-jack/black-jack.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { RegistrarseComponent } from '../componentes/registrarse/registrarse.component';
+import { NuevoViajeComponent } from '../componentes/nuevo-viaje/nuevo-viaje.component';
 
 
 // declaro donde quiero que se dirija
@@ -31,6 +32,7 @@ const MiRuteo = [
 {path: 'Jugadores' , component: JugadoresListadoComponent},
 {path: '' , component: LoginComponent}, //component: PrincipalComponent},
 {path: 'Login', component: LoginComponent},
+{path: 'NuevoViaje' , component: NuevoViajeComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent},
 {path: 'QuienSoy' , component: QuienSoyComponent},
 {path: 'Registro' , component: RegistrarseComponent},
@@ -42,7 +44,7 @@ const MiRuteo = [
 component: JuegosComponent ,
 children:
      [{path: '' , component: MenuCardComponent},
-      {path: 'Adivina' , component: AdivinaElNumeroComponent},
+      {path: 'NuevoViaje' , component: NuevoViajeComponent},
       {path: 'BlackJack' , component: BlackJackComponent},
       {path: 'Anagrama' , component: AnagramaComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},

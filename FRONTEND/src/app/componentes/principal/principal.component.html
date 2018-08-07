@@ -15,24 +15,22 @@
 
 
         </li>
-        <li class="list-group-item list-group-item-success">
-          <a routerLink="/Juegos">
+        <li *ngIf="logedOn == 'cliente'" class="list-group-item list-group-item-success">
+          <a routerLink="/NuevoViaje">
             <div class="media">
               <div class="media-left flip-img">
                 <img src="./assets/imagenes/ball.gif" class="media-object imagenDeMenu">
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Juegos</h4>
-                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes
-                  que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas
-                  impartidos por los docentes utilizando el juego.</p>
+                <h4 class="media-heading">Nuevo viaje</h4>
+                <p>Solicitar un nuevo viaje. Puede elegir un nivel de comodidad acorde al viaje que desee realizar. Debe indicar origen, destino, fecha y hora del viaje y el medio de pago.</p>
               </div>
 
             </div>
           </a>
         </li>
-        <li class="list-group-item list-group-item-info">
-          <a routerLink="/Listado">
+        <li *ngIf="logedOn == 'cliente'" class="list-group-item list-group-item-info">
+          <a routerLink="/Mapa">
             <div class="media">
               <div class="media-left flip-img">
                 <img src="./assets/imagenes/stats.gif" class="media-object imagenDeMenu">
@@ -45,7 +43,7 @@
             </div>
           </a>
         </li>
-        <li class="list-group-item list-group-item-warning">
+        <li *ngIf="logedOn == 'encargado'" class="list-group-item list-group-item-warning">
           <a routerLink="/Juegos">
             <div class="media">
               <div class="media-left flip-img">
@@ -59,7 +57,7 @@
             </div>
           </a>
         </li>
-        <li class="list-group-item list-group-item-warning">
+        <li *ngIf="logedOn == 'encargado'" class="list-group-item list-group-item-warning">
           <a routerLink="/Jugadores">
             <div class="media">
               <div class="media-left flip-img">

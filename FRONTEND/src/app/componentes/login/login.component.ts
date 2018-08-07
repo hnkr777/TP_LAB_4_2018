@@ -6,7 +6,6 @@ import {TimerObservable} from 'rxjs/observable/TimerObservable';
 import { environment } from '../../../environments/environment';
 import { isDefined } from '@angular/compiler/src/util';
 import { MsgComponent, TipoMensaje } from '../msg/msg.component';
-
 import * as jwt_decode from "jwt-decode";
 
 
@@ -74,27 +73,19 @@ export class LoginComponent implements OnInit {
   completado(res: Response) {
     let ob = JSON.parse(JSON.stringify(res.json()));
     console.log('¡Acceso concedido! Bienvenido ' + ob.perfil);
-    console.warn('Token: ['+ob.SessionToken+']');
+    console.log('Token: ['+ob.SessionToken+']');
     sessionStorage.setItem('token', ob.SessionToken);
-
-    let token;
-    try {
-      token = jwt_decode(ob.SessionToken);
-    }
-    catch(error) {
-      console.error(error);
-    }
-    console.log(JSON.stringify(token));
 
     return res.json() || {};
   }
 
-  getDecodedAccessToken(token: string): any {
-    try{
-        return jwt_decode(token);
+  tokenDecode(token: string): any {
+    try {
+      return jwt_decode(token);
     }
-    catch(Error){
-        return null;
+    catch(error) {
+      console.error(error);
+      return null;
     }
   }
 
@@ -126,13 +117,17 @@ export class LoginComponent implements OnInit {
 
   ingresar() {
     const obj = {email: this.email, password: this.clave};
+    let token, ob;
     let ruta: string = environment.backendRoute + 'login';
 
     this.xhr.httpPostS(ruta, obj, this.completado, this.error, () => {
+      token = sessionStorage.getItem('token');
       if (this.recordarme) {
         localStorage.setItem('token', sessionStorage.getItem('token'));
         sessionStorage.removeItem('token');
       }
+      ob = this.tokenDecode(token);
+      console.log(JSON.stringify(ob));
       this.router.navigate(['/Principal']);
     });
     let inter = setTimeout(() => {
