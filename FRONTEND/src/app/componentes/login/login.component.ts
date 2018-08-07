@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 import { isDefined } from '@angular/compiler/src/util';
 import { MsgComponent, TipoMensaje } from '../msg/msg.component';
 
-declare var $: any;
+import * as jwt_decode from "jwt-decode";
 
 
 @Component({
@@ -76,7 +76,26 @@ export class LoginComponent implements OnInit {
     console.log('¡Acceso concedido! Bienvenido ' + ob.perfil);
     console.warn('Token: ['+ob.SessionToken+']');
     sessionStorage.setItem('token', ob.SessionToken);
+
+    let token;
+    try {
+      token = jwt_decode(ob.SessionToken);
+    }
+    catch(error) {
+      console.error(error);
+    }
+    console.log(JSON.stringify(token));
+
     return res.json() || {};
+  }
+
+  getDecodedAccessToken(token: string): any {
+    try{
+        return jwt_decode(token);
+    }
+    catch(Error){
+        return null;
+    }
   }
 
   error( error: Response | any ) {
