@@ -1,0 +1,4 @@
+INSERT INTO 
+	viajes(id_cliente, fecha_hora_viaje, origen, destino, medio_de_pago) 
+VALUES 
+	(3,NOW(),"La plata","Caballito",2)

@@ -1,0 +1,79 @@
+<app-cabecera>  </app-cabecera>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="animate formRegister">
+  <div id="id01content" class="container form-container">
+    <div id="signUpSucess" style="display: none; text-align: center;">
+      <h1>Viaje registrado con exito!</h1><br>
+      <h3 id="costoMensaje"></h3>
+      <h3 id="duracionMensaje"></h3><br>
+      <button style="width: 100%; font-size: 20px; margin: auto;" class="btn btn-success signupbtn" routerLink="/">Volver a la pantalla principal</button>
+    </div>
+    <div id="formContent">
+
+      <label><b>Usuario al que le sera asignado el viaje</b></label>
+      <br><input id="id_cliente" type="text" name="id_cliente" required readonly="true" disabled="true"><br><br>
+
+      <label><b>Seleccione fecha de viaje</b></label>
+      <br><input id="fecha" type="date" placeholder="Seleccione fecha de viaje" name="fecha" required><br><br>
+
+      <label><b>Seleccione hora de viaje</b></label>
+      <br><input id="hora" type="time" placeholder="Seleccione hora de viaje" name="hora" required><br><br>
+
+      <label><b>Seleccione origen</b></label>
+      <br><input id="origen" type="text" placeholder="Seleccione origen" name="origen" required #origen [formControl]="searchControl"><br><br>
+
+      <label><b>Seleccione destino</b></label>
+      <br><input id="destino" type="text" placeholder="Seleccione destino" name="destino" required #destino [formControl]="searchControl"><br><br>
+
+      <label><b>Seleccione medio de pago</b></label>
+      <br><select id="medio_de_pago" placeholder="Seleccione medio de pago" name="medio_de_pago" required>
+          <option disabled selected value style="display:none"></option>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Tarjeta">Tarjeta</option>
+          <option value="Cuenta corriente">Cuenta corriente</option>
+      </select><br><br>
+
+      <label><b>Seleccione nivel de comodidad</b></label>
+      <br><select id="comodidad_solicitada" placeholder="Seleccione comodidad" name="comodidad_solicitada" required>
+          <option disabled selected value style="display:none"></option>
+          <option value="Bajo">Bajo</option>
+          <option value="Medio">Medio</option>
+          <option value="Alto">Alto</option>
+          <option value="N/A">N/A</option>
+      </select><br><br>  
+
+      <label><b>Cantidad de ascientos</b></label>
+      <br><select id="cantidad_de_ascientos_solicitados" placeholder="Seleccione cantidad de ascientos" name="cantidad_de_ascientos_solicitados" required>
+          <option disabled selected value style="display:none"></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="N/A">N/A</option>
+      </select><br><br>
+
+      <label><b>Resuelva la suma:</b></label>
+      <input type="text" name="calculo" id="calculo" value="7 + 4" disabled readonly>
+      <input type="number" id="numCaptcha" name="numCaptcha"><br><br>
+
+      <agm-map control="map.control" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker [latitude]="latOrigen" [longitude]="lngOrigen"></agm-marker>
+        <agm-marker [latitude]="latDestino" [longitude]="lngDestino"></agm-marker>
+        <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination" (onChange)="dirChange($event)" [provideRouteAlternatives]="true" [drivingOptions]="drivingOptions">
+        </agm-direction>
+      </agm-map>
+
+      <div class="clearfix">
+        <button class="btn btn-success signupbtn" (click)="registrar()">Registrar</button>
+        <button class="btn btn-danger cancelbtn" (click)="cancelar()">Cancelar</button>
+        <button class="btn btn-info cancelbtn" (click)="test()">Test</button>
+      </div>
+      <div id="carga"></div>
+      <h2 id="userError" style="visibility:hidden; color:red">Hubo un error al dar de alta el viaje!</h2><br>
+    </div>
+  </div>
+  </form>
+
+</div>

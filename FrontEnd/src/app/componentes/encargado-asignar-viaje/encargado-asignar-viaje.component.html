@@ -1,0 +1,75 @@
+<app-cabecera>  </app-cabecera>
+
+<body class="container">
+	<table class="table table-striped table-bordered table-hover table-condensed" id="viajesTable">
+
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Nº de viaje</th>
+				<th scope="col">Estado del viaje</th>
+				<th scope="col">Conductor</th>
+				<th scope="col">Cliente</th>
+				<th scope="col">Fecha y hora del viaje</th>
+				<th scope="col">Origen</th>
+				<th scope="col">Destino</th>
+				<th scope="col">Medio de pago</th>
+				<th scope="col">Comodidad solicitada</th>
+				<th scope="col">Ascientos solicitados</th>
+				<th scope="col">Costo</th>
+				<th scope="col">Accion</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let viaje of viajes">
+				<td>{{viaje.id | id}}</td>
+				<td>{{viaje.estado_viaje}}</td>
+				<td>
+					<select id="id_chofer{{viaje.id}}" name="id_chofer" (change)="onChange(viaje.id)">
+						<option disabled selected value style="display:none">Seleccione remisero</option>
+					  	<optgroup label="Remiseros aptos conforme criterios elegidos" *ngIf="viaje.RemiserosAptos.length!=0">
+						    <option *ngFor="let remisero of viaje.RemiserosAptos" value="{{remisero}}">{{remisero}}</option>
+					  	</optgroup>
+					  	<optgroup label="Remiseros aptos conforme criterios elegidos inexistente, puede seleccionar cualquier otro" *ngIf="viaje.RemiserosAptos.length==0">
+						    <option *ngFor="let remisero of remiserosDisponibles" value="{{remisero}}">{{remisero}}</option>
+					  	</optgroup>
+					</select>
+				</td>
+				<td>{{viaje.id_cliente}}</td>
+				<td>{{viaje.fecha_hora_viaje}}</td>
+				<td>{{viaje.origen}}</td>
+				<td>{{viaje.destino}}</td>
+				<td>{{viaje.medio_de_pago}}</td>
+				<td>{{viaje.comodidad_solicitada}}</td>
+				<td>{{viaje.cantidad_de_ascientos_solicitados}}</td>
+				<td>{{viaje.costo | costo}}</td>
+				<td><button id="btnModif{{viaje.id}}" class="btn btn-info" (click)="asignarChofer(viaje)" disabled>Asignar</button></td>
+			</tr>
+		</tbody>
+
+ 	</table>
+ 	<!-- MODAL EXITO -->
+	<div class="modal fade" id="modalFelicidadesLogged" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+			   <div class="modal-content">
+			      <div class="modal-header" style='color: white; background-color: green;'>
+			         <h4 class="modal-title" id="myModalLabel">Exito!</h4>
+			         <h2 id="userErrorTitle" style="visibility:hidden; color:red">Error</h2>
+			         <br>
+			         <button type="button" class="close" data-dismiss="modal">
+			         <span aria-hidden="true">&times;</span>
+			         <span class="sr-only">Close</span>
+			         </button>  
+			      </div>
+			      <div clasS="modal-body">
+			         <h5 class="myModalLabelBody" id="myModalLabelBody"></h5>
+			         <h2 id="userErrorBody" style="visibility:hidden; color:red">Ocurrio un error al intentar guardar su viaje</h2>
+			         <br>
+			      </div>
+			   </div>
+			</div>
+		</div>
+	</div>
+
+</body>
+

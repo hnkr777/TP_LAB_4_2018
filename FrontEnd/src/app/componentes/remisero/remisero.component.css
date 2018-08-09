@@ -1,0 +1,63 @@
+.imagenDeMenu{
+	width: 80px;
+	height: 70px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #100000;
+}
+
+.game-description{
+	font-size: 15px;
+}
+
+.main-body{
+    background-color: transparent;
+    margin-top: 5%;	
+    margin-bottom: 5%;	
+}
+
+.list-group-item {
+	margin: 10px;
+}
+
+.css3button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #808080;
+    padding: 10px 20px;
+    background: -moz-linear-gradient(
+        top,
+        #ffffff 0%,
+        #949494);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#ffffff),
+        to(#949494));
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    border: 1px solid #808080;
+    -moz-box-shadow:
+        2px 3px 3px rgba(0,0,0,0.3),
+        inset 2px 1px 2px rgba(255,255,255,1);
+    -webkit-box-shadow:
+        2px 3px 3px rgba(0,0,0,0.3),
+        inset 2px 1px 2px rgba(255,255,255,1);
+    box-shadow:
+        2px 3px 3px rgba(0,0,0,0.3),
+        inset 2px 1px 2px rgba(255,255,255,1);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.4),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+.list-group-item-heading{
+    font-size: 30px;
+    padding: 14px;
+}
+

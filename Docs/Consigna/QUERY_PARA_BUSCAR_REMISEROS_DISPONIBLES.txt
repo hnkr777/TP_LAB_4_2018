@@ -1,0 +1,7 @@
+SELECT *
+FROM empleados 
+WHERE perfil = 3 AND id NOT IN (
+	SELECT id_chofer 
+	FROM viajes 
+	WHERE estado_viaje = 1 AND id_chofer IS NOT NULL
+)

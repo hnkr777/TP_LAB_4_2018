@@ -1,0 +1,30 @@
+
+<div class="main-w3layouts wrapper apear">
+    <div class="container main-body">
+        <app-cabecera> </app-cabecera>
+        <div class="list-group slide-in">
+            <a (click)="NuevoViaje()" class="list-group-item list-group-item-action css3button">
+                <div class="media">
+                    <div class="media-left flip-img">
+                        <img src="./assets/imagenes/viaje.gif" class="media-object img-circle imagenDeMenu">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="titulo">Nuevo viaje</h4>
+                        <p>Solicitar un nuevo viaje. Puede elegir un nivel de comodidad acorde al viaje que desee realizar. Debe indicar origen, destino, fecha y hora del viaje y el medio de pago.</p>
+                    </div>
+                </div>
+            </a>
+            <a (click)="MisViajes()" class="list-group-item list-group-item-action css3button">
+                <div class="media">
+                    <div class="media-left flip-img">
+                        <img src="./assets/imagenes/listado.gif" class="media-object img-circle imagenDeMenu">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="titulo">Mis viajes</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <app-decorations></app-decorations>
+</div>
