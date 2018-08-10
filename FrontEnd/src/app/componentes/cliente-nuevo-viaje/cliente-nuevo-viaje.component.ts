@@ -15,6 +15,7 @@ import { MapsAPILoader } from '@agm/core';
 })
 export class ClienteNuevoViajeComponent implements OnInit {
 
+  public captchaNum: number;
   //=====================GOOGLE MAPS====================//
 
   lat: number = -34.603722;
@@ -61,6 +62,11 @@ export class ClienteNuevoViajeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.captchaNum = Math.floor((Math.random() * 20) + 2);
+    let num: number = Math.floor((Math.random() * (this.captchaNum-1)) + 1);
+    let s: string = (this.captchaNum - num).toString() + ' + ' + num.toString();
+    console.log(s + ' = ' + this.captchaNum);
+    $('#calculo').text(s);
 
   	$("#id_cliente").val(localStorage.getItem("usuarioLogeado"));
     //create search FormControl
@@ -166,9 +172,9 @@ export class ClienteNuevoViajeComponent implements OnInit {
 
     } else {
 
-      if( numCaptcha != 11){
-
-        //alert("Captcha erroneo");
+      if( numCaptcha != this.captchaNum){
+        $('#mensaje').text('Captcha erroneo');
+        $('#mensaje').css('display', 'inline');
         $('#modalFelicidadesLogged').modal('show');
 
       } else {
@@ -216,10 +222,10 @@ export class ClienteNuevoViajeComponent implements OnInit {
   }
 
   test(){
-  	$("#fecha").val("2018-06-11");
-  	$("#hora").val("14:54:46");
-  	$("#origen").val("José Bonifacio 802, Buenos Aires, Argentina");
-  	$("#destino").val("Diagonal Norte 650, Buenos Aires, Argentina");
+  	$("#fecha").val("2018-08-10");
+  	$("#hora").val("14:54:15");
+  	$("#origen").val("av. cordoba 802, Buenos Aires, Argentina");
+  	$("#destino").val("Diagonal Norte 770, Buenos Aires, Argentina");
   	$("#medio_de_pago").val("Efectivo");
   	$("#comodidad_solicitada").val("Alto");
   	$("#cantidad_de_ascientos_solicitados").val("N/A");

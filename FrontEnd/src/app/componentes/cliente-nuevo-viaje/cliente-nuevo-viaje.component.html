@@ -1,10 +1,10 @@
 <div class="main-w3layouts wrapper apear">
   
-  <div id="id01" class="modal">
+  <div id="id01" class="">
       <app-cabecera> </app-cabecera>
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> -->
     <form class="animate formRegister">
-      <div id="id01content" class="container form-container">
+      <div id="id01content" class="container main-body form-container">
         <div id="signUpSucess" style="display: none; text-align: center;">
           <h1>Viaje registrado con exito!</h1>
           <br>
@@ -15,11 +15,9 @@
         </div>
         <div id="formContent">
 
-          <label>
-            <b>Usuario al que le sera asignado el viaje</b>
-          </label>
-          <br>
-          <input id="id_cliente" type="text" name="id_cliente" required readonly="true" disabled="true">
+          <h2>
+            <b>Nuevo viaje</b>
+          </h2>
           <br>
           <br>
 
@@ -111,7 +109,8 @@
           <label>
             <b>Resuelva la suma:</b>
           </label>
-          <input type="text" name="calculo" id="calculo" value="7 + 4" disabled readonly style="width: 40%;">
+          <label type="text" name="calculo" id="calculo" style="width: 40%; border: solid; border-color: slategrey;"></label>
+          <!-- <input type="text" name="calculo" id="calculo" readonly style="width: 40%;"> -->
           <input type="number" id="numCaptcha" name="numCaptcha">
           <br>
           <br>
@@ -119,7 +118,7 @@
 
 
           <div class="clearfix">
-            <button class="btn btn-success signupbtn" (click)="registrar()">Registrar</button>
+            <button class="btn btn-success signupbtn" (click)="registrar()">Viajar</button>
             <button style="margin-left: 15px;" class="btn btn-danger cancelbtn" (click)="cancelar()">Cancelar</button>
             <!-- <button class="btn btn-info cancelbtn" (click)="test()">Test</button> -->
           </div>
@@ -131,6 +130,12 @@
     </form>
 
   </div>
+
+
+
+  
+  <app-decorations></app-decorations>
+</div>
 
 
 <!-- MODAL mensajes -->
@@ -157,7 +162,3 @@
       </div>
     </div>
   </div>
-
-  
-  <app-decorations></app-decorations>
-</div>
