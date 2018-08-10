@@ -1,29 +1,29 @@
-<app-cabecera>  </app-cabecera>
+<div class="main-w3layouts wrapper apear">
+	<app-cabecera> </app-cabecera>
+	<div class="container main-body slide-in">
 
-<body class="container">
+		<div class="row" style="padding-bottom: 5%;">
 
-	<div class="row" style="padding-bottom: 5%;">
+			<div class="col-sm-6">
+				<chart [options]="calificacion_servicio"></chart>
+			</div>
 
-		<div class="col-sm-6">
-			<chart [options]="calificacion_servicio"></chart>
+			<div class="col-sm-6">
+				<chart [options]="comportamiento_conductor"></chart>
+			</div>
+
 		</div>
 
-		<div class="col-sm-6">
-			<chart [options]="comportamiento_conductor"></chart>
-		</div>
+		<div class="row" style="padding-bottom: 5%;">
 
+			<div class="col-sm-6">
+				<chart [options]="limpieza_vehiculo"></chart>
+			</div>
+
+			<div class="col-sm-6">
+				<chart [options]="duracion_viaje"></chart>
+			</div>
+		</div>
 	</div>
-
-	<div class="row" style="padding-bottom: 5%;">
-
-		<div class="col-sm-6">
-			<chart [options]="limpieza_vehiculo"></chart>
-		</div>
-
-		<div class="col-sm-6">
-			<chart [options]="duracion_viaje"></chart>
-		</div>
-
-	</div>
-	
-</body>
+	<app-decorations></app-decorations>
+</div>

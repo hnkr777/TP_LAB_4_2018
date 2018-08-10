@@ -81,7 +81,7 @@ export class EncargadoGestionVehiculosRemiserosComponent implements OnInit {
   		    $("#userErrorBody").css("visibility", "visible");
 
   		} else {
-          $('#myModalLabelBody').html('Vehiculo modificado con exito');
+          $('#myModalLabelBody').html('Vehículo modificado con éxito');
   		    $('#modalFelicidadesLogged').modal('show');
   		    this.traerVehiculos();
   		}
@@ -124,7 +124,7 @@ export class EncargadoGestionVehiculosRemiserosComponent implements OnInit {
           $("#userErrorBody").css("visibility", "visible");
 
       } else {
-          $('#myModalLabelBody').html('Remisero modificado con exito');
+          $('#myModalLabelBody').html('Remisero modificado con éxito');
           $('#modalFelicidadesLogged').modal('show');
           this.traerEmpleados();
       }

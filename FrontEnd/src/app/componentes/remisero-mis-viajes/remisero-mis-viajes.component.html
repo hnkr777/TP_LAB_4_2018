@@ -1,71 +1,77 @@
-<app-cabecera>  </app-cabecera>
+<div class="main-w3layouts wrapper apear">
+	<app-cabecera> </app-cabecera>
 
-<body class="container">
-	<table class="table table-striped table-bordered table-hover table-condensed" id="viajesTable">
+	<div class="container main-body">
+		<table class="table table-striped table-bordered table-hover table-condensed" id="viajesTable">
 
-		<thead class="thead-dark">
-			<tr>
-				<th scope="col">Nº de viaje</th>
-				<th scope="col">Estado del viaje</th>
-				<th scope="col">Conductor</th>
-				<th scope="col">Cliente</th>
-				<th scope="col">Fecha y hora del viaje</th>
-				<th scope="col">Origen</th>
-				<th scope="col">Destino</th>
-				<th scope="col">Medio de pago</th>
-				<th scope="col">Comodidad solicitada</th>
-				<th scope="col">Ascientos solicitados</th>
-				<th scope="col">Costo</th>
-				<th scope="col">Accion</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let viaje of misViajes">
-				<td>{{viaje.id | id}}</td>
-				<td>
-					<select id="estado_viaje{{viaje.id}}" name="estado_viaje">
-						<option value="Solicitado" [attr.selected]="viaje.estado_viaje=='Solicitado' ? true : null" disabled="true">Solicitado</option>
-						<option value="Realizado" [attr.selected]="viaje.estado_viaje=='Realizado' ? true : null">Realizado</option>
-						<option value="Cargando el pago" [attr.selected]="viaje.estado_viaje=='Cargando el pago' ? true : null">Cargando el pago</option>
-						<option value="Cuenta corriente" [attr.selected]="viaje.estado_viaje=='Cuenta corriente' ? true : null">Cuenta corriente</option>
-						<option value="Cancelado" [attr.selected]="viaje.estado_viaje=='Cancelado' ? true : null">Cancelado</option>
-					</select>
-				</td>
-				<td>{{viaje.id_chofer}}</td>
-				<td>{{viaje.id_cliente}}</td>
-				<td>{{viaje.fecha_hora_viaje}}</td>
-				<td>{{viaje.origen}}</td>
-				<td>{{viaje.destino}}</td>
-				<td>{{viaje.medio_de_pago}}</td>
-				<td>{{viaje.comodidad_solicitada}}</td>
-				<td>{{viaje.cantidad_de_ascientos_solicitados}}</td>
-				<td>{{viaje.costo | costo}}</td>
-				<td><button id="btnModif{{viaje.id}}" class="btn btn-info" (click)="modificar(viaje)">Modificar</button></td>
-			</tr>
-		</tbody>
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Nº de viaje</th>
+					<th scope="col">Estado del viaje</th>
+					<!-- <th scope="col">Conductor</th> -->
+					<th scope="col">Cliente</th>
+					<th scope="col">Fecha y hora del viaje</th>
+					<th scope="col">Origen</th>
+					<th scope="col">Destino</th>
+					<th scope="col">Medio de pago</th>
+					<th scope="col">Comodidad solicitada</th>
+					<th scope="col">Ascientos solicitados</th>
+					<th scope="col">Costo</th>
+					<th scope="col">Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let viaje of misViajes">
+					<td>{{viaje.id | id}}</td>
+					<td>
+						<select id="estado_viaje{{viaje.id}}" name="estado_viaje">
+							<option value="Solicitado" [attr.selected]="viaje.estado_viaje=='Solicitado' ? true : null" disabled="true">Solicitado</option>
+							<option value="Realizado" [attr.selected]="viaje.estado_viaje=='Realizado' ? true : null">Realizado</option>
+							<option value="Cargando el pago" [attr.selected]="viaje.estado_viaje=='Cargando el pago' ? true : null">Cargando el pago</option>
+							<option value="Cuenta corriente" [attr.selected]="viaje.estado_viaje=='Cuenta corriente' ? true : null">Cuenta corriente</option>
+							<option value="Cancelado" [attr.selected]="viaje.estado_viaje=='Cancelado' ? true : null">Cancelado</option>
+						</select>
+					</td>
+					<!-- <td>{{viaje.id_chofer}}</td> -->
+					<td>{{viaje.id_cliente}}</td>
+					<td>{{viaje.fecha_hora_viaje}}</td>
+					<td>{{viaje.origen}}</td>
+					<td>{{viaje.destino}}</td>
+					<td>{{viaje.medio_de_pago}}</td>
+					<td>{{viaje.comodidad_solicitada}}</td>
+					<td>{{viaje.cantidad_de_ascientos_solicitados}}</td>
+					<td>{{viaje.costo | costo}}</td>
+					<td>
+						<button id="btnModif{{viaje.id}}" class="btn btn-info" (click)="modificar(viaje)">Modificar</button>
+					</td>
+				</tr>
+			</tbody>
 
- 	</table>
- 	<div id="carga"></div>
-      <!-- MODAL GANO LOGGEADO -->
-      <div class="modal fade" id="modalFelicidadesLogged" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div class="vertical-alignment-helper">
-            <div class="modal-dialog vertical-align-center">
-               <div class="modal-content">
-                  <div class="modal-header" style='color: white; background-color: green;'>
-                     <h4 class="modal-title" id="myModalLabel">Exito!</h4>
-                     <h2 id="userErrorTitle" style="visibility:hidden; color:red">Error</h2><br>
-                     <button type="button" class="close" data-dismiss="modal">
-                       <span aria-hidden="true">&times;</span>
-                       <span class="sr-only">Close</span>
-                     </button>  
-                  </div>
-                  <div clasS="modal-body">
-                     <h5 class="myModalLabelBody" id="myModalLabel">Viaje modificado con exito</h5>
-                     <h2 id="userErrorBody" style="visibility:hidden; color:red">Ocurrio un error al intentar guardar su viaje</h2><br>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-</body>
+		</table>
+		<div id="carga"></div>
+		<!-- MODAL GANO LOGGEADO -->
+		<div class="modal fade" id="modalFelicidadesLogged" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="vertical-alignment-helper">
+				<div class="modal-dialog vertical-align-center">
+					<div class="modal-content">
+						<div class="modal-header" style='color: white; background-color: green;'>
+							<h4 class="modal-title" id="myModalLabel">Exito!</h4>
+							<h2 id="userErrorTitle" style="visibility:hidden; color:red">Error</h2>
+							<br>
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+								<span class="sr-only">Close</span>
+							</button>
+						</div>
+						<div clasS="modal-body">
+							<h5 class="myModalLabelBody" id="myModalLabel">Viaje modificado con exito</h5>
+							<h2 id="userErrorBody" style="visibility:hidden; color:red">Ocurrio un error al intentar guardar su viaje</h2>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<app-decorations></app-decorations>
+</div>

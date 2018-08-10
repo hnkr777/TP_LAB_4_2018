@@ -1,15 +1,19 @@
-<app-cabecera>  </app-cabecera>
-<div class="container main-body">
-   <div class="list-group">
-      <a class="list-group-item list-group-item-action css3button">
-         <div class="media">
-            <div class="media-left">
-               <img src="./assets/imagenes/saladejuegos.png" class="media-object img-circle imagenDeMenu" >
-            </div>
-            <div class="media-body">
-               <h4 class="list-group-item-heading" (click)="MisViajes()">Mis viajes</h4>
-            </div>
-         </div>
-      </a>
-   </div>
+<div class="main-w3layouts wrapper apear">
+    <div class="container main-body">
+        <app-cabecera> </app-cabecera>
+        <div class="list-group">
+            <a (click)="MisViajes()" class="list-group-item list-group-item-action css3button">
+                <div class="media">
+                    <div class="media-left flip-img">
+                        <img src="./assets/imagenes/asignados.gif" class="media-object img-circle imagenDeMenu">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="titulo">Mis viajes asignados</h4>
+                        <p>Acceso al listado de viajes asignados por el encargado.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <app-decorations></app-decorations>
 </div>

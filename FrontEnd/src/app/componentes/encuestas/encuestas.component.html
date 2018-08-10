@@ -1,123 +1,189 @@
-<app-cabecera>  </app-cabecera>
+<div class="main-w3layouts wrapper apear">
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="animate formRegister">
-  <div id="id01content" class="container form-container">
-    <div id="signUpSucess" style="display: none; text-align: center;">
-      <h1>Encuesta registrada con exito!</h1><br><br>
-      <button style="width: 100%; font-size: 20px; margin: auto;" class="btn btn-success signupbtn" routerLink="/">Volver a la pantalla principal</button>
+    <div id="id01" class="modal">
+        <app-cabecera> </app-cabecera>
+        <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> -->
+        <form class="animate formRegister">
+            <div id="id01content" class="container form-container">
+                <div id="signUpSucess" style="display: none; text-align: center;">
+                    <h1>Encuesta registrada con exito!</h1>
+                    <br>
+                    <br>
+                    <button style="width: 100%; font-size: 20px; margin: auto;" class="btn btn-success signupbtn" routerLink="/">Volver a la pantalla principal</button>
+                </div>
+                <div id="formContent">
+                    <h2>
+                      <b>Encuesta de satisfacción</b>
+                    </h2>
+                    <br>
+                    <label>
+                        <b>Califique el comportamiento del conductor</b>
+                    </label>
+                    <br>
+                    <fieldset id="comportamiento_conductor">
+                        <input id="comportamiento_conductor_0" type="radio" name="comportamiento_conductor" required value="Muy mala"> Muy mala
+                        <br>
+                        <input id="comportamiento_conductor_1" type="radio" name="comportamiento_conductor" required value="Mala"> Mala
+                        <br>
+                        <input id="comportamiento_conductor_2" type="radio" name="comportamiento_conductor" required value="Normal"> Normal
+                        <br>
+                        <input id="comportamiento_conductor_3" type="radio" name="comportamiento_conductor" required value="Buena"> Buena
+                        <br>
+                        <input id="comportamiento_conductor_4" type="radio" name="comportamiento_conductor" required value="Muy buena"> Muy buena
+                        <br>
+                    </fieldset>
+                    <br>
+
+                    <label>
+                        <b>Califique la conversacion del conductor</b>
+                    </label>
+                    <br>
+                    <fieldset id="conversacion_conductor">
+                        <input id="conversacion_conductor_0" type="radio" name="conversacion_conductor" required value="Muy mala"> Muy mala
+                        <br>
+                        <input id="conversacion_conductor_1" type="radio" name="conversacion_conductor" required value="Mala"> Mala
+                        <br>
+                        <input id="conversacion_conductor_2" type="radio" name="conversacion_conductor" required value="Normal"> Normal
+                        <br>
+                        <input id="conversacion_conductor_3" type="radio" name="conversacion_conductor" required value="Buena"> Buena
+                        <br>
+                        <input id="conversacion_conductor_4" type="radio" name="conversacion_conductor" required value="Muy buena"> Muy buena
+                        <br>
+                    </fieldset>
+                    <br>
+
+                    <label>
+                        <b>Califique la puntualidad del conductor</b>
+                    </label>
+                    <br>
+                    <fieldset id="puntualidad_conductor">
+                        <input id="puntualidad_conductor_0" type="radio" name="puntualidad_conductor" required value="Muy mala"> Muy mala
+                        <br>
+                        <input id="puntualidad_conductor_1" type="radio" name="puntualidad_conductor" required value="Mala"> Mala
+                        <br>
+                        <input id="puntualidad_conductor_2" type="radio" name="puntualidad_conductor" required value="Normal"> Normal
+                        <br>
+                        <input id="puntualidad_conductor_3" type="radio" name="puntualidad_conductor" required value="Buena"> Buena
+                        <br>
+                        <input id="puntualidad_conductor_4" type="radio" name="puntualidad_conductor" required value="Muy buena"> Muy buena
+                        <br>
+                    </fieldset>
+                    <br>
+
+                    <label>
+                        <b>Califique la limpieza del vehiculo</b>
+                    </label>
+                    <br>
+                    <select id="limpieza_vehiculo" placeholder="Califique la limpieza del vehiculo" name="limpieza_vehiculo" required>
+                        <option disabled selected value style="display:none"></option>
+                        <option value="Muy mala">Muy mala</option>
+                        <option value="Mala">Mala</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Buena">Buena</option>
+                        <option value="Muy buena">Muy buena</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label>
+                        <b>Califique el estado del vehiculo</b>
+                    </label>
+                    <br>
+                    <select id="estado_vehiculo" placeholder="Califique el estado del vehiculo" name="estado_vehiculo" required>
+                        <option disabled selected value style="display:none"></option>
+                        <option value="Muy mala">Muy mala</option>
+                        <option value="Mala">Mala</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Buena">Buena</option>
+                        <option value="Muy buena">Muy buena</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label>
+                        <b>Califique duracion del viaje</b>
+                    </label>
+                    <br>
+                    <select id="duracion_viaje" placeholder="Califique duracion del viaje" name="duracion_viaje" required>
+                        <option disabled selected value style="display:none"></option>
+                        <option value="Muy mala">Muy mala</option>
+                        <option value="Mala">Mala</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Buena">Buena</option>
+                        <option value="Muy buena">Muy buena</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label>
+                        <b>Calificacion final del servicio</b>
+                    </label>
+                    <br>
+                    <select id="calificacion_servicio" placeholder="Calificacion final del servicio" name="calificacion_servicio" required>
+                        <option disabled selected value style="display:none"></option>
+                        <option value="Muy mala">Muy mala</option>
+                        <option value="Mala">Mala</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Buena">Buena</option>
+                        <option value="Muy buena">Muy buena</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label>
+                        <b>Fotos tomadas durante el viaje: &nbsp;&nbsp;</b>
+                    </label>
+                    <file-drop [disableIf]="files.length >= 3" headertext="Coloque aqui su foto (Maximo 3)" (onFileDrop)="dropped($event)"></file-drop>
+                    <br>
+                    <br>
+
+                    <div class="upload-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Fotos</th>
+                                </tr>
+                            </thead>
+                            <tbody class="upload-name-style">
+                                <tr *ngFor="let item of files; let i=index">
+                                    <td>
+                                        <strong>{{ item.relativePath }}</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <label>
+                        <b>Recomiendo el servicio recibido: &nbsp;&nbsp;</b>
+                    </label>
+                    <input id="recomendaria_servicio" type="checkbox" name="recomendaria_servicio" required>
+                    <br>
+                    <br>
+
+                    <label>
+                        <b>Comentarios: </b>
+                    </label>
+                    <input id="comentario" type="text" name="comentario" required>
+                    <br>
+                    <br>
+
+                    <div class="clearfix">
+                        <button class="btn btn-success signupbtn" (click)="enviar()">Enviar</button>
+                        <button class="btn btn-danger cancelbtn" (click)="cancelar()">Cancelar</button>
+                        <button class="btn btn-info cancelbtn" (click)="test()">Test</button>
+                    </div>
+                    <div id="carga"></div>
+                    <h2 id="userError" style="visibility:hidden; color:red">Hubo un error al dar de alta la encuesta</h2>
+                    <br>
+                </div>
+            </div>
+        </form>
+
     </div>
-    <div id="formContent">
 
-      <label><b>Califique el comportamiento del conductor</b></label>
-      <br>
-      <fieldset id="comportamiento_conductor">
-      	<input id="comportamiento_conductor_0" type="radio" name="comportamiento_conductor" required value="Muy mala"> Muy mala <br>
-      	<input id="comportamiento_conductor_1" type="radio" name="comportamiento_conductor" required value="Mala"> Mala <br>
-      	<input id="comportamiento_conductor_2"  type="radio" name="comportamiento_conductor" required value="Normal"> Normal <br>
-      	<input id="comportamiento_conductor_3"  type="radio" name="comportamiento_conductor" required value="Buena"> Buena <br>
-      	<input id="comportamiento_conductor_4"  type="radio" name="comportamiento_conductor" required value="Muy buena"> Muy buena <br>
-      </fieldset>
-      <br>
-
-      <label><b>Califique la conversacion del conductor</b></label>
-      <br>
-      <fieldset id="conversacion_conductor">
-      	<input id="conversacion_conductor_0" type="radio" name="conversacion_conductor" required value="Muy mala"> Muy mala <br>
-      	<input id="conversacion_conductor_1" type="radio" name="conversacion_conductor" required value="Mala"> Mala <br>
-      	<input id="conversacion_conductor_2"  type="radio" name="conversacion_conductor" required value="Normal"> Normal <br>
-      	<input id="conversacion_conductor_3"  type="radio" name="conversacion_conductor" required value="Buena"> Buena <br>
-      	<input id="conversacion_conductor_4"  type="radio" name="conversacion_conductor" required value="Muy buena"> Muy buena <br>
-      </fieldset>
-      <br>
-
-      <label><b>Califique la puntualidad del conductor</b></label>
-      <br>
-      <fieldset id="puntualidad_conductor">
-      	<input id="puntualidad_conductor_0" type="radio" name="puntualidad_conductor" required value="Muy mala"> Muy mala <br>
-      	<input id="puntualidad_conductor_1" type="radio" name="puntualidad_conductor" required value="Mala"> Mala <br>
-      	<input id="puntualidad_conductor_2" type="radio" name="puntualidad_conductor" required value="Normal"> Normal <br>
-      	<input id="puntualidad_conductor_3" type="radio" name="puntualidad_conductor" required value="Buena"> Buena <br>
-      	<input id="puntualidad_conductor_4" type="radio" name="puntualidad_conductor" required value="Muy buena"> Muy buena <br>
-      </fieldset>
-      <br>
-
-      <label><b>Califique la limpieza del vehiculo</b></label>
-      <br><select id="limpieza_vehiculo" placeholder="Califique la limpieza del vehiculo" name="limpieza_vehiculo" required>
-          <option disabled selected value style="display:none"></option>
-          <option value="Muy mala">Muy mala</option>
-          <option value="Mala">Mala</option>
-          <option value="Normal">Normal</option>
-          <option value="Buena">Buena</option>
-          <option value="Muy buena">Muy buena</option>
-      </select><br><br>
-
-      <label><b>Califique el estado del vehiculo</b></label>
-      <br><select id="estado_vehiculo" placeholder="Califique el estado del vehiculo" name="estado_vehiculo" required>
-          <option disabled selected value style="display:none"></option>
-          <option value="Muy mala">Muy mala</option>
-          <option value="Mala">Mala</option>
-          <option value="Normal">Normal</option>
-          <option value="Buena">Buena</option>
-          <option value="Muy buena">Muy buena</option>
-      </select><br><br>
-
-      <label><b>Califique duracion del viaje</b></label>
-      <br><select id="duracion_viaje" placeholder="Califique duracion del viaje" name="duracion_viaje" required>
-          <option disabled selected value style="display:none"></option>
-          <option value="Muy mala">Muy mala</option>
-          <option value="Mala">Mala</option>
-          <option value="Normal">Normal</option>
-          <option value="Buena">Buena</option>
-          <option value="Muy buena">Muy buena</option>
-      </select><br><br>
-
-      <label><b>Calificacion final del servicio</b></label>
-      <br><select id="calificacion_servicio" placeholder="Calificacion final del servicio" name="calificacion_servicio" required>
-          <option disabled selected value style="display:none"></option>
-          <option value="Muy mala">Muy mala</option>
-          <option value="Mala">Mala</option>
-          <option value="Normal">Normal</option>
-          <option value="Buena">Buena</option>
-          <option value="Muy buena">Muy buena</option>
-      </select><br><br>
-
-      <label><b>Fotos tomadas durante el viaje: &nbsp;&nbsp;</b></label>
-      <file-drop [disableIf]="files.length >= 3" headertext="Coloque aqui su foto (Maximo 3)" (onFileDrop)="dropped($event)"></file-drop><br><br>
-
-      <div class="upload-table">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Fotos</th>
-                </tr>
-            </thead>
-            <tbody class="upload-name-style">
-                <tr *ngFor="let item of files; let i=index">
-                    <td><strong>{{ item.relativePath }}</strong></td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
-
-      <br><br>
-
-      <label><b>Recomiendo el servicio recibido: &nbsp;&nbsp;</b></label>
-      <input id="recomendaria_servicio" type="checkbox" name="recomendaria_servicio" required><br><br>
-
-      <label><b>Comentarios: </b></label>
-      <input id="comentario" type="text" name="comentario" required><br><br>
-
-      <div class="clearfix">
-        <button class="btn btn-success signupbtn" (click)="enviar()">Enviar</button>
-        <button class="btn btn-danger cancelbtn" (click)="cancelar()">Cancelar</button>
-        <button class="btn btn-info cancelbtn" (click)="test()">Test</button>
-      </div>
-      <div id="carga"></div>
-      <h2 id="userError" style="visibility:hidden; color:red">Hubo un error al dar de alta la encuesta</h2><br>
-    </div>
-  </div>
-  </form>
-
+    <app-decorations></app-decorations>
 </div>

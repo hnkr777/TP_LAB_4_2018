@@ -1,139 +1,194 @@
-<app-cabecera>  </app-cabecera>
-<body class="container" id="mainContainer">
-   <table class="table table-striped table-bordered table-hover table-condensed" id="viajesTable">
+<div class="main-w3layouts wrapper apear">
+  <app-cabecera> </app-cabecera>
+
+  <body class="container main-body" id="mainContainer">
+    <table class="table table-striped table-bordered table-hover table-condensed" id="viajesTable">
       <thead class="thead-dark">
-         <tr>
-            <th scope="col">Nº de viaje</th>
-            <th scope="col">Estado del viaje</th>
-            <th scope="col">Conductor</th>
-            <th scope="col">Cliente</th>
-            <th scope="col">Fecha y hora del viaje</th>
-            <th scope="col">Origen</th>
-            <th scope="col">Destino</th>
-            <th scope="col">Medio de pago</th>
-            <th scope="col">Comodidad solicitada</th>
-            <th scope="col">Ascientos solicitados</th>
-            <th scope="col">Costo</th>
-            <th scope="col">Accion</th>
-         </tr>
+        <tr>
+          <th scope="col">Nº de viaje</th>
+          <th scope="col">Estado del viaje</th>
+          <th scope="col">Conductor</th>
+          <!-- <th scope="col">Cliente</th> -->
+          <th scope="col">Fecha y hora del viaje</th>
+          <th scope="col">Origen</th>
+          <th scope="col">Destino</th>
+          <th scope="col">Medio de pago</th>
+          <th scope="col">Comodidad solicitada</th>
+          <th scope="col">Asientos solicitados</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Acción</th>
+        </tr>
       </thead>
       <tbody>
-         <tr *ngFor="let viaje of misViajes">
-            <td>{{viaje.id | id}}</td>
-            <td>{{viaje.estado_viaje}}</td>
-            <td>{{viaje.id_chofer}}</td>
-            <td>{{viaje.id_cliente}}</td>
-            <td>{{viaje.fecha_hora_viaje}}</td>
-            <td>{{viaje.origen}}</td>
-            <td>{{viaje.destino}}</td>
-            <td>{{viaje.medio_de_pago}}</td>
-            <td>{{viaje.comodidad_solicitada}}</td>
-            <td>{{viaje.cantidad_de_ascientos_solicitados}}</td>
-            <td>{{viaje.costo | costo}}</td>
-            <td *ngIf="viaje.estado_viaje==='Solicitado'" style="white-space: nowrap;">
-               <button id="btnModif{{viaje.id}}" class="btn btn-success" (click)="modificar(viaje)">Modificar viaje</button>&nbsp;
-               <button id="btnModif{{viaje.id}}" class="btn btn-danger" (click)="cancelar(viaje)">Cancelar viaje</button>
-            </td>
-            <td *ngIf="viaje.estado_viaje!=='Solicitado' && 
+        <tr *ngFor="let viaje of misViajes">
+          <td>{{viaje.id | id}}</td>
+          <td>{{viaje.estado_viaje}}</td>
+          <td>{{viaje.id_chofer}}</td>
+          <!-- <td>{{viaje.id_cliente}}</td> -->
+          <td>{{viaje.fecha_hora_viaje}}</td>
+          <td>{{viaje.origen}}</td>
+          <td>{{viaje.destino}}</td>
+          <td>{{viaje.medio_de_pago}}</td>
+          <td>{{viaje.comodidad_solicitada}}</td>
+          <td>{{viaje.cantidad_de_ascientos_solicitados}}</td>
+          <td>{{viaje.costo | costo}}</td>
+          <td *ngIf="viaje.estado_viaje==='Solicitado'" style="white-space: nowrap;">
+            <button id="btnModif{{viaje.id}}" class="btn btn-success" (click)="modificar(viaje)">Modificar viaje</button>&nbsp;
+            <button id="btnModif{{viaje.id}}" class="btn btn-danger" (click)="cancelar(viaje)">Cancelar viaje</button>
+          </td>
+          <td *ngIf="viaje.estado_viaje!=='Solicitado' && 
             	viaje.estado_viaje!=='Cancelado' && 
-            	misEncuestasViajesId.indexOf(viaje.id) === -1" 
-            	style="white-space: nowrap;"> <!-- Valido que el viaje no este en Solicitado, ni en Cancelado, y que ya no tenga encuesta cargada-->
-               <button id="btnModif{{viaje.id}}" class="btn btn-info" (click)="encuesta(viaje.id)">Realizar encuesta</button>
-            </td>
-            <td *ngIf="viaje.estado_viaje!=='Solicitado' && 
+            	misEncuestasViajesId.indexOf(viaje.id) === -1" style="white-space: nowrap;">
+            <!-- Valido que el viaje no este en Solicitado, ni en Cancelado, y que ya no tenga encuesta cargada-->
+            <button id="btnModif{{viaje.id}}" class="btn btn-info" (click)="encuesta(viaje.id)">Realizar encuesta</button>
+          </td>
+          <td *ngIf="viaje.estado_viaje!=='Solicitado' && 
               viaje.estado_viaje!=='Cancelado' && 
-              misEncuestasViajesId.indexOf(viaje.id) !== -1" 
-              style="white-space: nowrap;">
-              <button id="btnModif{{viaje.id}}" class="btn btn-secondary" (click)="encuestaMostrarFotos(viaje.id)">Mostrar fotos encuesta</button>
-            </td>
-            <td *ngIf="viaje.estado_viaje==='Cancelado'"></td>
-         </tr>
+              misEncuestasViajesId.indexOf(viaje.id) !== -1" style="white-space: nowrap;">
+            <button id="btnModif{{viaje.id}}" class="btn btn-secondary" (click)="encuestaMostrarFotos(viaje.id)">Mostrar fotos encuesta</button>
+          </td>
+          <td *ngIf="viaje.estado_viaje==='Cancelado'"></td>
+        </tr>
       </tbody>
-   </table>
+    </table>
 
-   <!-- Modal form modificacion -->
-   <div id="id01" class="modal" style="display:none;">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-    <form class="animate formRegister">
-      <div id="id01content" class="container form-container">
-        <div id="signUpSucess" style="display: none; text-align: center;">
-          <h1>Viaje modificado con exito!</h1><br>
-          <h3 id="costoMensaje"></h3>
-          <h3 id="duracionMensaje"></h3><br>
-          <button style="width: 100%; font-size: 20px; margin: auto;" class="btn btn-success signupbtn" routerLink="/">Volver a la pantalla principal</button>
-        </div>
-        <div id="formContent">
+    <!-- Modal form modificacion -->
+    <div id="id01" class="modal" style="display:none;">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+      <form class="animate formRegister">
+        <div id="id01content" class="container form-container">
+          <div id="signUpSucess" style="display: none; text-align: center;">
+            <h1>Viaje modificado con exito!</h1>
+            <br>
+            <h3 id="costoMensaje"></h3>
+            <h3 id="duracionMensaje"></h3>
+            <br>
+            <button style="width: 100%; font-size: 20px; margin: auto;" class="btn btn-success signupbtn" routerLink="/">Volver a la pantalla principal</button>
+          </div>
+          <div id="formContent">
 
-          <label><b>Usuario al que le sera asignado el viaje</b></label>
-          <br><input id="id_cliente" type="text" name="id_cliente" required readonly="true" disabled="true"><br><br>
+            <label>
+              <b>Usuario al que le sera asignado el viaje</b>
+            </label>
+            <br>
+            <input id="id_cliente" type="text" name="id_cliente" required readonly="true" disabled="true">
+            <br>
+            <br>
 
-          <label><b>Seleccione fecha de viaje</b></label>
-          <br><input id="fecha" type="date" placeholder="Seleccione fecha de viaje" name="fecha" required><br><br>
+            <label>
+              <b>Seleccione fecha de viaje</b>
+            </label>
+            <br>
+            <input id="fecha" type="date" placeholder="Seleccione fecha de viaje" name="fecha" required>
+            <br>
+            <br>
 
-          <label><b>Seleccione hora de viaje</b></label>
-          <br><input id="hora" type="time" placeholder="Seleccione hora de viaje" name="hora" required><br><br>
+            <label>
+              <b>Seleccione hora de viaje</b>
+            </label>
+            <br>
+            <input id="hora" type="time" placeholder="Seleccione hora de viaje" name="hora" required>
+            <br>
+            <br>
 
-          <label><b>Seleccione origen</b></label>
-          <br><input id="origen" type="text" placeholder="Seleccione origen" name="origen" required #origen [formControl]="searchControl"><br><br>
+            <label>
+              <b>Seleccione origen</b>
+            </label>
+            <br>
+            <input id="origen" type="text" placeholder="Seleccione origen" name="origen" required #origen [formControl]="searchControl">
+            <br>
+            <br>
 
-          <label><b>Seleccione destino</b></label>
-          <br><input id="destino" type="text" placeholder="Seleccione destino" name="destino" required #destino [formControl]="searchControl"><br><br>
+            <label>
+              <b>Seleccione destino</b>
+            </label>
+            <br>
+            <input id="destino" type="text" placeholder="Seleccione destino" name="destino" required #destino [formControl]="searchControl">
+            <br>
+            <br>
 
-          <label><b>Seleccione medio de pago</b></label>
-          <br><select id="medio_de_pago" placeholder="Seleccione medio de pago" name="medio_de_pago" required>
+            <label>
+              <b>Seleccione medio de pago</b>
+            </label>
+            <br>
+            <select id="medio_de_pago" placeholder="Seleccione medio de pago" name="medio_de_pago" required>
               <option disabled selected value style="display:none"></option>
               <option value="Efectivo">Efectivo</option>
               <option value="Tarjeta">Tarjeta</option>
               <option value="Cuenta corriente">Cuenta corriente</option>
-          </select><br><br>
+            </select>
+            <br>
+            <br>
 
-          <label><b>Seleccione nivel de comodidad</b></label>
-          <br><select id="comodidad_solicitada" placeholder="Seleccione comodidad" name="comodidad_solicitada" required>
+            <label>
+              <b>Seleccione nivel de comodidad</b>
+            </label>
+            <br>
+            <select id="comodidad_solicitada" placeholder="Seleccione comodidad" name="comodidad_solicitada" required>
               <option disabled selected value style="display:none"></option>
               <option value="Bajo">Bajo</option>
               <option value="Medio">Medio</option>
               <option value="Alto">Alto</option>
               <option value="N/A">N/A</option>
-          </select><br><br>  
+            </select>
+            <br>
+            <br>
 
-          <label><b>Cantidad de ascientos</b></label>
-          <br><select id="cantidad_de_ascientos_solicitados" placeholder="Seleccione cantidad de ascientos" name="cantidad_de_ascientos_solicitados" required>
+            <label>
+              <b>Cantidad de ascientos</b>
+            </label>
+            <br>
+            <select id="cantidad_de_ascientos_solicitados" placeholder="Seleccione cantidad de ascientos" name="cantidad_de_ascientos_solicitados"
+              required>
               <option disabled selected value style="display:none"></option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="N/A">N/A</option>
-          </select><br><br>
+            </select>
+            <br>
+            <br>
 
-          <agm-map control="map.control" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-            <agm-marker [latitude]="latOrigen" [longitude]="lngOrigen"></agm-marker>
-            <agm-marker [latitude]="latDestino" [longitude]="lngDestino"></agm-marker>
-            <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination" (onChange)="dirChange($event)" [provideRouteAlternatives]="true" [drivingOptions]="drivingOptions">
-            </agm-direction>
-          </agm-map>
+            <agm-map control="map.control" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+              <agm-marker [latitude]="latOrigen" [longitude]="lngOrigen"></agm-marker>
+              <agm-marker [latitude]="latDestino" [longitude]="lngDestino"></agm-marker>
+              <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination" (onChange)="dirChange($event)" [provideRouteAlternatives]="true"
+                [drivingOptions]="drivingOptions">
+              </agm-direction>
+            </agm-map>
 
-          <div class="clearfix cancelModifBtns">
-             <button class="btn btn-success signupbtn form-button" (click)="modificarForm()">Modificar</button>
-             <button class="btn btn-danger cancelbtn form-button" (click)="cancelarForm()">Cancelar</button>
+            <div class="clearfix cancelModifBtns">
+              <button class="btn btn-success signupbtn form-button" (click)="modificarForm()">Modificar</button>
+              <button class="btn btn-danger cancelbtn form-button" (click)="cancelarForm()">Cancelar</button>
+            </div>
+            <div id="carga"></div>
+            <h2 id="userError" style="visibility:hidden; color:red">Hubo un error al dar de alta el viaje!</h2>
+            <br>
           </div>
-          <div id="carga"></div>
-          <h2 id="userError" style="visibility:hidden; color:red">Hubo un error al dar de alta el viaje!</h2><br>
         </div>
+      </form>
+    </div>
+
+  </body>
+
+  <div id="fotosEncuesta" class="container visor-fotos">
+
+    <div class="row">
+      <div class="col-sm-4" style="text-align: center;">
+        <img id="foto01" class="fotos">
       </div>
-    </form>
+      <div class="col-sm-4" style="text-align: center;">
+        <img id="foto02" class="fotos">
+      </div>
+      <div class="col-sm-4" style="text-align: center;">
+        <img id="foto03" class="fotos">
+      </div>
+    </div>
+
+    <button class="btn btn-success" (click)="volverImagenes()" style="margin: 1%; font-size: 25px;">Volver</button>
+
   </div>
 
-</body>
-
-<div id="fotosEncuesta" class="container" style="display: none; background-color: white; border-radius: 20px; box-shadow: 20px 20px 15px 5px;     text-align: center; margin-bottom: 15%;">
-
-  <div class="row">
-    <div class="col-sm-4" style="text-align: center;"><img id="foto01" style="width: 250px; height: 250px; padding: 5%;"></div>
-    <div class="col-sm-4" style="text-align: center;"><img id="foto02" style="width: 250px; height: 250px; padding: 5%;"></div>
-    <div class="col-sm-4" style="text-align: center;"><img id="foto03" style="width: 250px; height: 250px; padding: 5%;"></div>
-  </div>
-
-  <button class="btn btn-success" (click)="volverImagenes()" style="margin: 1%; font-size: 25px;">Volver</button>
-  
+  <app-decorations></app-decorations>
 </div>

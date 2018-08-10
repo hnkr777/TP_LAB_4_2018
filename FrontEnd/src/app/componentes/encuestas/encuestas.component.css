@@ -84,20 +84,36 @@ button {
     }
 }
 
+form fieldset {
+    width: 50%;
+    margin-left: 40%;
+    border-color: red;
+    border-width: 1px;
+    text-align: left;
+}
+
 .container {
     background-color: white;
     position: relative;
-    margin: 15%;
+    /* margin: 15%; */
     width: 100%;
-    font-size: 20px;
-    border-radius: 20px;
-    box-shadow: 20px 20px 15px 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    /* box-shadow: 20px 20px 15px 5px; */
+    margin-bottom: 30px;
+    overflow-y: auto;
+}
+
+.modal:before {
+    height: 10% !important;
 }
 
 .form-container{
-    padding: 3%;
-    margin: auto;
-    width: 50%; 
+    padding: 25px;
+    /* margin: auto; */
+    width: 80%;
+    height: fit-content;
+    
 }
 
 a {
@@ -105,6 +121,10 @@ a {
     cursor: pointer;
 }
 
+form button {
+    margin-left: 15px;
+}
+
 .formRegister{
-    padding-top: 5%;
+    /* padding-top: 5%; */
 }
