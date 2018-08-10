@@ -198,7 +198,7 @@ export class ClienteMisViajesComponent implements OnInit {
 
     modificarForm(){
 
-      this.viaje.id_cliente = $("#id_cliente").val();
+      this.viaje.id_cliente = localStorage.getItem("usuarioLogeado");
       this.viaje.fecha_hora_viaje = $("#fecha").val() + " " + $("#hora").val();
       this.viaje.origen = $("#origen").val();
       this.viaje.destino = $("#destino").val();

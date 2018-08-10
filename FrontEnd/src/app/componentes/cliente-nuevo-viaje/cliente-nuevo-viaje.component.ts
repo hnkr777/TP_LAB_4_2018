@@ -133,7 +133,7 @@ export class ClienteNuevoViajeComponent implements OnInit {
 
   registrar(){
 
-    var id_cliente = $("#id_cliente").val();
+    var id_cliente = localStorage.getItem("usuarioLogeado");
     var fecha_hora_viaje = $("#fecha").val() + " " + $("#hora").val();
     var origen = $("#origen").val();
     var destino = $("#destino").val();
@@ -189,6 +189,8 @@ export class ClienteNuevoViajeComponent implements OnInit {
             "&costo=" + costo;
 
         $("#carga").html(myGlobals.LOADING_GIF);
+        
+        console.warn(datos);
 
         this.miServicioDeViajes.nuevo(datos, 'application/x-www-form-urlencoded')
         .then( response => {
