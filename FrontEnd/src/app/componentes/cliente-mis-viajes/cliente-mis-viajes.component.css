@@ -109,7 +109,7 @@ td {
     display: none;
 }
 
-.slidein {
+.slide-in {
   -webkit-animation: animation 2000ms linear 1 both;
   animation: animation 2000ms linear 1 both;
 }
@@ -224,7 +224,7 @@ td {
 }
 
 .modal::before {
-    height: 10%;
+    height: 5%;
 }
 
 #id01content {

@@ -1,7 +1,7 @@
 <div class="main-w3layouts wrapper apear">
   <app-cabecera> </app-cabecera>
 
-  <div class="container main-body" id="mainContainer">
+  <div class="container main-body slide-in" id="mainContainer">
     <table class="table table-striped table-bordered table-hover table-condensed" id="viajesTable">
       <thead class="thead-dark">
         <tr>
@@ -80,11 +80,11 @@
 
 <!-- Modal form modificacion -->
 <div id="id01" class="modal" style="display:none;">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> -->
   <form class="animate formRegister">
-    <div id="id01content" class="container form-container">
+    <div id="id01content" class="container form-container slide-in">
       <div id="signUpSucess" style="display: none; text-align: center;">
-        <h1>Viaje modificado con exito!</h1>
+        <h1>¡Viaje modificado correctamente!</h1>
         <br>
         <h3 id="costoMensaje"></h3>
         <h3 id="duracionMensaje"></h3>
@@ -96,8 +96,6 @@
         <h2>
           <b>Modificar viaje</b>
         </h2>
-        <br>
-        <!-- <input id="id_cliente" type="text" name="id_cliente" required readonly="true" disabled="true"> -->
         <br>
 
         <label>
