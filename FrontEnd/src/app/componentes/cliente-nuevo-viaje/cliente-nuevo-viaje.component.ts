@@ -159,13 +159,17 @@ export class ClienteNuevoViajeComponent implements OnInit {
         cantidad_de_ascientos_solicitados === ""
       ){
 
-      alert("Faltan datos");
+        $('#mensaje').text('Falta completar campos');
+        $('#mensaje').css('display', 'inline');
+        $('#modalFelicidadesLogged').modal('show');
+        //alert("Faltan datos");
 
     } else {
 
       if( numCaptcha != 11){
 
-        alert("Captcha erroneo");
+        //alert("Captcha erroneo");
+        $('#modalFelicidadesLogged').modal('show');
 
       } else {
 

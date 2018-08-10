@@ -220,4 +220,14 @@ td {
     width: 100%;
     height: 100%;
     padding: 2%;
+    background-size: cover;
+}
+
+.modal::before {
+    height: 10%;
+}
+
+#id01content {
+    background-color: white;
+    border-radius: 5px;
 }
