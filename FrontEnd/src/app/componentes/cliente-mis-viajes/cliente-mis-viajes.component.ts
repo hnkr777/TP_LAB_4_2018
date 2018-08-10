@@ -151,7 +151,8 @@ export class ClienteMisViajesComponent implements OnInit {
       $("#medio_de_pago").val(this.viaje.medio_de_pago);
       $("#comodidad_solicitada").val(this.viaje.comodidad_solicitada);
       $("#cantidad_de_ascientos_solicitados").val(this.viaje.cantidad_de_ascientos_solicitados);
-
+      this.costoFinal = this.viaje.costo;
+      console.log(JSON.stringify(this.viaje));
     }
 
     cancelar(viaje){
@@ -168,7 +169,9 @@ export class ClienteMisViajesComponent implements OnInit {
       "&medio_de_pago=" + this.viaje.medio_de_pago +
       "&comodidad_solicitada=" + this.viaje.comodidad_solicitada +
       "&cantidad_de_ascientos_solicitados=" + this.viaje.cantidad_de_ascientos_solicitados +
-      "&costo=" + this.viaje.costo; 
+      "&costo=" + this.viaje.costo;
+
+      console.log(datos);
 
       $("#carga").html(myGlobals.LOADING_GIF);
 
@@ -183,7 +186,7 @@ export class ClienteMisViajesComponent implements OnInit {
 
             $("#id01").css("display","inherit");
             $("#formContent").css("display", "none");
-            $("#signUpSucessMsj").html("Viaje cancelado con exito!");   
+            $("#signUpSucessMsj").html("¡Viaje cancelado con éxito!");   
             $("#signUpSucess").css("display", "inherit");
 
             this.cargarDatosPagina();
@@ -205,6 +208,7 @@ export class ClienteMisViajesComponent implements OnInit {
       this.viaje.medio_de_pago = $("#medio_de_pago").val();
       this.viaje.comodidad_solicitada = $("#comodidad_solicitada").val();
       this.viaje.cantidad_de_ascientos_solicitados = $("#cantidad_de_ascientos_solicitados").val();
+      this.costo = this.costoFinal;
 
       if(this.viaje.comodidad_solicitada == "Bajo"){
         this.viaje.costo = this.costo + 50;
@@ -212,10 +216,11 @@ export class ClienteMisViajesComponent implements OnInit {
          this.viaje.costo = this.costo + 100;
       } else if (this.viaje.comodidad_solicitada == "Alto"){
          this.viaje.costo = this.costo + 150;
-      } else if (this.viaje.comodidad_solicitada == "N/A"){
+      } else {
          this.viaje.costo = this.costo;
       }
-
+      console.warn('costoFinal: '+this.costoFinal);
+      console.warn('costo: '+this.costo);
       this.costoFinal = this.viaje.costo;
 
       var datos = "id=" + this.viaje.id + 
@@ -228,7 +233,9 @@ export class ClienteMisViajesComponent implements OnInit {
       "&medio_de_pago=" + this.viaje.medio_de_pago +
       "&comodidad_solicitada=" + this.viaje.comodidad_solicitada +
       "&cantidad_de_ascientos_solicitados=" + this.viaje.cantidad_de_ascientos_solicitados +
-      "&costo=" + this.viaje.costo; 
+      "&costo=" + this.viaje.costo;
+
+      console.log(datos);
 
       $("#carga").html(myGlobals.LOADING_GIF);
 
@@ -241,11 +248,11 @@ export class ClienteMisViajesComponent implements OnInit {
 
           } else {
 
-            $("#costoMensaje").html("El costo final del viaje sera de " + (this.costoFinal).toFixed(2) + " $");
-            $("#duracionMensaje").html("La duracion del viaje sera de " + this.durationText);
+            //$("#costoMensaje").html("El costo final del viaje sera de " + (this.costoFinal).toFixed(2) + " $");
+            //$("#duracionMensaje").html("La duracion del viaje sera de " + this.durationText);
 
             $("#formContent").css("display", "none");
-            $("#signUpSucessMsj").html("Viaje modificado con exito!");
+            $("#signUpSucessMsj").html("¡Viaje modificado con éxito!");
             $("#signUpSucess").css("display", "inherit");
 
             this.cargarDatosPagina();
@@ -280,7 +287,7 @@ export class ClienteMisViajesComponent implements OnInit {
 
     }
 
-    traerEncuestas(){
+    traerEncuestas() {
 
       this.miServicioDeEncuestas.listar().then(datos=>{
 

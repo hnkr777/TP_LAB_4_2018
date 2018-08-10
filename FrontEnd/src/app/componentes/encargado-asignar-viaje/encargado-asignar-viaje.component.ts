@@ -195,7 +195,7 @@ export class EncargadoAsignarViajeComponent implements OnInit {
 	  		    //$("#userErrorBody").css("visibility", "visible");
 
 	  		} else {
-	          	$('#myModalLabelBody').html('Viaje modificado con exito');
+	          	$('#myModalLabelBody').html('Viaje asignado correctamente');
 	  		    $('#modalFelicidadesLogged').modal('show');
 	  		    this.traerVehiculos();
 	  		}
